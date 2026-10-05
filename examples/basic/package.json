@@ -1,0 +1,18 @@
+{
+  "name": "@yuiitsu/example-basic",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-strip-types src/server.ts",
+    "smoke": "node --experimental-strip-types src/smoke.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.0"
+  },
+  "devDependencies": {
+    "@yuiitsu/core": "workspace:*",
+    "@yuiitsu/dialect-mysql": "workspace:*",
+    "@yuiitsu/dialect-postgres": "workspace:*",
+    "@yuiitsu/dialect-sqlite": "workspace:*"
+  }
+}

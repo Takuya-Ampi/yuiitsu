@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version: "24.14.0"
+          cache: true
+      # ローカルと同じ docker-compose.yml で PostgreSQL と MySQL を起動する
+      - run: vp run db:up
+      - run: vp check
+      - run: vp test run
+      - run: vp run -r build
+      - run: bash scripts/check-pack.sh
+      - if: failure()
+        run: docker compose logs --no-color | tail -200
+      - if: always()
+        run: vp run db:down

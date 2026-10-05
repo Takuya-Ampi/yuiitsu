@@ -1,0 +1,37 @@
+{
+  "name": "yuiitsu-workspace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vp run -r build",
+    "test": "vp test run",
+    "check": "vp check",
+    "example:sqlite": "vp run -r build && mkdir -p .data && DB=sqlite SQLITE_FILE=.data/example.sqlite node --env-file-if-exists=.env examples/basic/src/server.ts",
+    "example:postgres": "vp run db:up && vp run -r build && DB=postgres node --env-file-if-exists=.env examples/basic/src/server.ts",
+    "example:mysql": "vp run db:up && vp run -r build && DB=mysql node --env-file-if-exists=.env examples/basic/src/server.ts",
+    "verify": "bash scripts/manual-check.sh",
+    "check:pack": "bash scripts/check-pack.sh",
+    "release": "vp run -r build && bash scripts/check-pack.sh && pnpm -r publish --access public"
+  },
+  "devDependencies": {
+    "@apidevtools/swagger-parser": "^13.1.0",
+    "@hono/zod-openapi": "1.6.3",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^24.19.1",
+    "@types/pg": "^8.23.1",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "better-sqlite3": "^13.0.3",
+    "hono": "4.13.12",
+    "kysely": "0.29.6",
+    "mysql2": "^3.24.5",
+    "pg": "^8.23.1",
+    "typescript": "^5.9",
+    "vite-plus": "1.0.0",
+    "zod": "^4"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "packageManager": "pnpm@10.32.1"
+}

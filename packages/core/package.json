@@ -1,0 +1,52 @@
+{
+  "name": "@yuiitsu/core",
+  "version": "0.1.0",
+  "description": "Hono 組み込み型の REST API 自動生成ライブラリ。Kysely のテーブルから CRUD と OpenAPI 定義を生成する",
+  "keywords": [
+    "api",
+    "crud",
+    "hono",
+    "kysely",
+    "openapi",
+    "rest"
+  ],
+  "homepage": "https://github.com/Takuya-Ampi/yuiitsu#readme",
+  "bugs": {
+    "url": "https://github.com/Takuya-Ampi/yuiitsu/issues"
+  },
+  "license": "MIT",
+  "author": "Takuya Ampi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Takuya-Ampi/yuiitsu.git",
+    "directory": "packages/core"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack"
+  },
+  "devDependencies": {
+    "@hono/zod-openapi": "1.6.3",
+    "hono": "4.13.12",
+    "kysely": "0.29.6",
+    "zod": "^4.6.5"
+  },
+  "peerDependencies": {
+    "@hono/zod-openapi": "^1.6.3",
+    "hono": ">=4.10.0",
+    "kysely": "^0.29.0",
+    "zod": "^4.0.0"
+  }
+}

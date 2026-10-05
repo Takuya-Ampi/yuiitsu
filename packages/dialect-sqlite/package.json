@@ -1,0 +1,49 @@
+{
+  "name": "@yuiitsu/dialect-sqlite",
+  "version": "0.1.0",
+  "description": "yuiitsu の SQLite ダイアレクト",
+  "keywords": [
+    "api",
+    "crud",
+    "hono",
+    "kysely",
+    "openapi",
+    "rest",
+    "sqlite"
+  ],
+  "homepage": "https://github.com/Takuya-Ampi/yuiitsu#readme",
+  "bugs": {
+    "url": "https://github.com/Takuya-Ampi/yuiitsu/issues"
+  },
+  "license": "MIT",
+  "author": "Takuya Ampi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Takuya-Ampi/yuiitsu.git",
+    "directory": "packages/dialect-sqlite"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack"
+  },
+  "devDependencies": {
+    "@yuiitsu/core": "workspace:*",
+    "kysely": "0.29.6"
+  },
+  "peerDependencies": {
+    "@yuiitsu/core": "workspace:^",
+    "kysely": "^0.29.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@yuiitsu/contract-tests",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@yuiitsu/core": "workspace:*",
+    "@yuiitsu/dialect-mysql": "workspace:*",
+    "@yuiitsu/dialect-postgres": "workspace:*",
+    "@yuiitsu/dialect-sqlite": "workspace:*"
+  }
+}

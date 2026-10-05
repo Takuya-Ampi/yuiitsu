@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": ["node"],
+    "verbatimModuleSyntax": false,
+    "isolatedModules": true,
+    "paths": {
+      "@yuiitsu/core": ["./packages/core/src/index.ts"],
+      "@yuiitsu/dialect-postgres": ["./packages/dialect-postgres/src/index.ts"],
+      "@yuiitsu/dialect-mysql": ["./packages/dialect-mysql/src/index.ts"],
+      "@yuiitsu/dialect-sqlite": ["./packages/dialect-sqlite/src/index.ts"]
+    },
+    "allowImportingTsExtensions": true
+  },
+  "include": ["packages/*/src", "packages/*/test", "examples/*/src"]
+}
